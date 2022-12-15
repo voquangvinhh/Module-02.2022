@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Lesson-08.iml" filepath="$PROJECT_DIR$/.idea/Lesson-08.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practice/Practice.iml" filepath="$PROJECT_DIR$/Practice/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practice/Refactoring/Refactoring.iml" filepath="$PROJECT_DIR$/Practice/Refactoring/Refactoring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practice/Refactoring-tachbien/Refactoring-tachbien.iml" filepath="$PROJECT_DIR$/Practice/Refactoring-tachbien/Refactoring-tachbien.iml" />
     </modules>
   </component>
 </project>
