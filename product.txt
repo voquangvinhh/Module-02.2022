@@ -1,0 +1,4 @@
+5,Annas,Anna,41.0,den,7,399000.0
+4,Addidas,Addidas1,41.0,while,7,415000.0
+2,NIKE,Nikefor1,40.0,den,8,420000.0
+1,NIKE,Nikefor1,42.0,trang,8,420000.0
