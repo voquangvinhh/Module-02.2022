@@ -24,14 +24,7 @@ public class Invoice2 {
     ProductManagement productManagement = ProductManagement.getProductManagement();
     CustomerManagement customerManagement = CustomerManagement.getCustomerManagement();
 
-    public Invoice2(String idInvoice, String idCustomer, String IDProduct, String nameCustomer, Date date, Map<String, Integer> hashMap) {
-        this.idInvoice = idInvoice;
-        this.idCustomer = idCustomer;
-        this.IDProduct = IDProduct;
-        this.nameCustomer = nameCustomer;
-        this.date = date;
-        this.hashMap = hashMap;
-    }
+
 
     public Invoice2(String idInvoice, Date date, String idCustomer) {
         this.idInvoice = idInvoice;
@@ -44,9 +37,17 @@ public class Invoice2 {
         this.idInvoice = idInvoice;
         this.nameCustomer = nameCustomer;
         this.idCustomer = idCustomer;
-        this.date = new Date();
+        this.date = date;
         this.hashMap = new HashMap<>();
     }
+
+//    public Invoice2(String idInvoice, String nameCustomer, String idCustomer) {
+//        this.idInvoice = idInvoice;
+//        this.nameCustomer = nameCustomer;
+//        this.idCustomer = idCustomer;
+//        this.date = new Date();
+//        this.hashMap = new HashMap<>();
+//    }
 
     public String getIdInvoice() {
         return idInvoice;

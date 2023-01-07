@@ -102,9 +102,12 @@ public class InvoiceManagement2 {
         return invoice2;
     }
 
-    public Invoice2 displayInvoiceOfDate(String date){
+    public Invoice2 searhInvoiceByDate(String date){
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         for (Invoice2 invoice2 : invoiceList2){
-            if (invoice2.getDate().equals(date)){
+            String dateFormat = simpleDateFormat.format(invoice2.getDate());
+            if (dateFormat.equals(date)){
                 return invoice2;
             }
         }

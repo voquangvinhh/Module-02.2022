@@ -55,7 +55,7 @@ public class InvoiceManagementMenu2 {
             idCustomer = sc.nextLine();
         }
         Date createdDay = new Date();
-        Invoice2 newInvoice = new Invoice2(idInvoice, createdDay, customerManagement.search(idCustomer).getName(), idCustomer);
+        Invoice2 newInvoice = new Invoice2(idInvoice, createdDay, idCustomer);
         int choice = -1;
 
         while (choice != 0) {
@@ -113,10 +113,10 @@ public class InvoiceManagementMenu2 {
     public void search(){
         System.out.println("Nhập ngày hóa đơn: ");
         String date = sc.nextLine();
-        if (invoiceManagement2.displayInvoiceOfDate(date) != null){
-            System.out.println(invoiceManagement2.displayInvoiceOfDate(date));
+        if (invoiceManagement2.searhInvoiceByDate(date) != null){
+            System.out.println(invoiceManagement2.searhInvoiceByDate(date));
         } else
-            System.out.println("ID không tồn tại! ");
+            System.out.println("Ngày không tồn tại! ");
     }
 
     public void display(){
