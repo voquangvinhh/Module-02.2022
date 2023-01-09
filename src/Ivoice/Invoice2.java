@@ -123,6 +123,18 @@ public class Invoice2 {
         return result.toString();
     }
 
+    public String getProduct(){
+        StringBuffer out = new StringBuffer();
+        for (String key : hashMap.keySet()){
+            String id = productManagement.search(key).getId();
+            String name = productManagement.search(id).getName();
+            int quantity = hashMap.get(key);
+            out.append("\n" + "ID sản phẩm: ").append(id).append("\n" + "Tên sản phẩm: ").append(name)
+                    .append("\n" + "Số lượng mua: ").append(quantity);
+        }
+        return out.toString();
+    }
+
 
     public String stringCreatedDay() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -131,12 +143,14 @@ public class Invoice2 {
 
     @Override
     public String toString() {
-        return "-----Invoice-----" + "\n" +
-                "ID Hóa đơn: " + idInvoice + "\n" +
-                "Ngày: " + stringCreatedDay() +  "\n" +
+        return  "-----------Invoice----------" + "\n" +
+                "ID Hóa đơn: " + idInvoice +  "\n" +
+                "Ngày: " + stringCreatedDay() +   "\n" +
                 "Tên khách hàng: " + nameCustomer + "\n" +
-                "Thông tin sản phẩm: " + getProductInformation() + "\n" +
-                "Tổng: " + getTotal()  + "\n";
+                "~~~~~Thông tin sản phẩm~~~~~" +
+                getProduct() + "\n" +
+                "Tổng: " + getTotal()  + "\n" +
+                "============================" + "\n";
     }
 
     public String toFileInvocie2() {

@@ -1,13 +1,13 @@
 package Ivoice;
 
-import Customer.Customer;
+import Product.Product;
 
-import javax.sound.midi.MidiFileFormat;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class InvoiceManagement2 {
@@ -102,16 +102,16 @@ public class InvoiceManagement2 {
         return invoice2;
     }
 
-    public Invoice2 searhInvoiceByDate(String date){
-
+    public List<Invoice2> searhInvoiceByDate(String date){
+        List<Invoice2> invoice2List = new ArrayList<>();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         for (Invoice2 invoice2 : invoiceList2){
             String dateFormat = simpleDateFormat.format(invoice2.getDate());
             if (dateFormat.equals(date)){
-                return invoice2;
+                invoice2List.add(invoice2);
             }
         }
-        return null;
+        return invoice2List;
     }
 
     @Override

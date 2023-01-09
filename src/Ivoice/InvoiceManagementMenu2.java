@@ -22,9 +22,10 @@ public class InvoiceManagementMenu2 {
             System.out.println("-----Menu Invoice-----");
             System.out.println("1. Thêm hóa đơn " + "\n" +
                     "2. Xóa hóa đơn" + "\n" +
-                    "3. Tìm hóa đơn" + "\n" +
-                    "4. Hiển thị danh sách hóa đơn" + "\n" +
-                    "5. Đọc file" + "\n" +
+                    "3. Tìm hóa đơn theo ID" + "\n" +
+                    "4. Tìm hóa đơn theo ngày" + "\n" +
+                    "5. Hiển thị danh sách hóa đơn" + "\n" +
+                    "6. Đọc file" + "\n" +
                     "0. Thoát");
             System.out.println("vui lòng lựa chọn: ");
             choice = sc.nextInt();
@@ -34,9 +35,10 @@ public class InvoiceManagementMenu2 {
                 case 1 -> addInvoice();
                 case 2 -> remove();
                 case 3 -> search();
-                case 4 -> display();
-                case 5 -> invoiceManagement2.readFromFileInvoice();
-                default -> System.out.println("Lựa chọn của bạn không tồn tại");
+                case 4 -> searchInvoiceByDate();
+                case 5 -> display();
+                case 6 -> invoiceManagement2.readFromFileInvoice();
+                default -> System.out.println("Lựa chọn của bạn không tồn tại! ");
             }
         }while (choice != 0);
     }
@@ -111,12 +113,21 @@ public class InvoiceManagementMenu2 {
     }
 
     public void search(){
+        System.out.println("Nhập ID hóa đơn: ");
+        String id = sc.nextLine();
+        if (invoiceManagement2.searchById(id)!= null){
+            System.out.println(invoiceManagement2.searchById(id));
+        } else
+            System.out.println("ID không tồn tại! ");
+    }
+    public void searchInvoiceByDate(){
         System.out.println("Nhập ngày hóa đơn: ");
         String date = sc.nextLine();
         if (invoiceManagement2.searhInvoiceByDate(date) != null){
             System.out.println(invoiceManagement2.searhInvoiceByDate(date));
-        } else
-            System.out.println("Ngày không tồn tại! ");
+        } else {
+            System.out.println("Ngày không tìm thấy! ");
+        }
     }
 
     public void display(){
